@@ -1,0 +1,14 @@
+path {
+  fill: white;
+  stroke: black;
+}
+
+
+circle.circle {
+  fill: steelblue;
+  r: 1px;
+}
+
+circle.circle:hover {
+  fill: red
+}
