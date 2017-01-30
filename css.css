@@ -1,13 +1,13 @@
 path {
   fill: white;
-  stroke: black;
+  stroke: green;
   width: auto;
 }
 
 
 circle.circle {
-  fill: steelblue;
-  r: 2px;
+opacity: 0.5
+
 }
 
 circle.circle:hover {
@@ -22,3 +22,8 @@ circle.circle:hover {
   color: #fff;
   border-radius: 2px;
   width: auto;
+}
+
+svg {
+  background: skyblue
+}
