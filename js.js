@@ -1,13 +1,12 @@
 
 let url = "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json",
     worldfile = "https://rawgit.com/Docwali777/mapdatavisualization/master/world-map.json",
+    anotherwolrdJSON = "https://rawgit.com/Docwali777/mapData/master/anotherwolrdJSON.json",
     h = 1000,
     w = 1400;
-let projection =
-
-d3.geoMercator()
-.scale(150)
- 	.translate([w / 2, h / 2]);
+let projection = d3.geoMercator()
+                    .scale(150)
+ 	                  .translate([w / 2, h / 2]);
 
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 
@@ -18,7 +17,7 @@ var zoom = d3.zoom();
 
 
   var svg = d3.select("body")
-  .append("svg").attr("height", h).attr("width", w).call(zoom)
+  .append("svg").attr("height", h).attr("width", w).call(d3.zoom().on("zoom", function(){svg.attr("transform", d3.event.transform)})).append("g")
 
 
 d3.queue()
@@ -74,12 +73,19 @@ svg.call(tip)
 
 }
 
-d3.json("anotherwolrdJSON.json", function(map){
+d3.json(anotherwolrdJSON, function(map){
 
-svg.selectAll("path")
+
+
+var paths = svg.selectAll("path")
 .data(map.features).enter().append("path")
 .attr("d", path)
-.attr("fill", "white")
+
+
+
+var text = svg.selectAll("text").data(map.features).enter().append("text")
+
+console.log(map.features[0].properties.name)
 
 
 

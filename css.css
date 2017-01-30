@@ -1,12 +1,14 @@
 path {
   fill: white;
   stroke: green;
-  width: auto;
+
 }
 
 
 circle.circle {
-opacity: 0.5
+opacity: 0.5;
+stroke: black;
+stroke-width: 0.5px
 
 }
 
