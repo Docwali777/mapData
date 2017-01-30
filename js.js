@@ -41,7 +41,10 @@ function meteorites()
         Reclat: ${d.properties.reclat} <br>`;
   });
 
-var circle = svg.selectAll("class", "  circle").data(data.features).enter().append("circle")
+var circle = svg.selectAll("class", "circle")
+                  .data(data.features)
+                  .enter()
+                  .append("circle")
 
 var min = d3.min(data.features, function(d){return +d.properties.mass})
 var max = d3.max(data.features, function(d){return +d.properties.mass})
@@ -49,7 +52,7 @@ var max = d3.max(data.features, function(d){return +d.properties.mass})
 var radius = d3.scaleSqrt().domain([min, max]).range([1.5, 30])
 
 circle.attr("class", "circle")
-.attr("cx", function(d){
+   .attr("cx", function(d){
 if (d.geometry ===null){return 0}
 else {return projection(d.geometry.coordinates)[0]}
 
