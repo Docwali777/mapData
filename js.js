@@ -1,6 +1,6 @@
 let url = "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json",
     worldfile = "https://rawgit.com/Docwali777/mapdatavisualization/master/world-map.json",
-    anotherwolrdJSON = "https://rawgit.com/Docwali777/mapData/master/ne_110m_admin_0_countries%20" + "(3).json ",
+    anotherwolrdJSON = "https://rawgit.com/Docwali777/mapData/master/worldmap.json",
     h = 1000,
     w = 1400;
 let projection = d3.geoMercator()
